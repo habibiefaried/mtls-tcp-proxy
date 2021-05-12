@@ -60,6 +60,18 @@ Decryptor
 CERT_PATH=./certs/server.pem KEY_PATH=./certs/server-key.pem ROOT_CERT_PATH=./certs/ca.pem BIND_PORT=10001 REMOTE_ADDR_PAIR=localhost:10002 ./main decryptor
 ```
 
+TCP Server (netcat)
+
+```
+nc -nlvp 10002
+```
+
+Client (netcat)
+
+```
+nc -vvv localhost 10000
+```
+
 # Testing
 
 ```
