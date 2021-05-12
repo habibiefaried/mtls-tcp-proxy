@@ -4,7 +4,7 @@
       "expiry": "876000h"
     },
     "profiles": {
-      "massl": {
+      "mtlstcp": {
         "usages": ["signing", "key encipherment", "server auth", "client auth"],
         "expiry": "876000h"
       }

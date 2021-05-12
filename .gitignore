@@ -16,3 +16,4 @@
 *.pem
 *.csr
 mtls-tcp-proxy
+main
