@@ -1,0 +1,16 @@
+{
+  "CN": "system:server",
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": [
+    {
+      "C": "ID",
+      "L": "Jawa Barat",
+      "O": "system:servers",
+      "OU": "mtlstcp",
+      "ST": "Bandung"
+    }
+  ]
+}
