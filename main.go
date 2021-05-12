@@ -39,10 +39,9 @@ func main() {
 
 		if s == "" {
 			if os.Args[1] == "encryptor" {
-				fmt.Println("encryptor")
 				proxy.Encrypt()
 			} else if os.Args[1] == "decryptor" {
-				fmt.Println("decryptor")
+				proxy.Decrypt()
 			} else {
 				fmt.Println(os.Args[1] + " is not recognized")
 			}

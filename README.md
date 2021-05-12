@@ -1,6 +1,14 @@
 # mtls-tcp-proxy
 Mutual Authentication TLS encryption TCP proxy with golang
 
+# Why?
+
+I created this because of sometimes, it is not possible for us to establish secure connection and authentication between client and server for some reason (e.g no budget for VPNs). Forcing both parties to connect those services over TCP network, that is plaintext by design
+
+![Alt text](/screenshot/unsecuredlink.png?raw=true "Unsecured link")
+
+If somehow we manage to create secure proxy link, that stands between those client and server, then I think it's sufficient enough. 
+
 # Certificate Setup
 Navigate to provided CSR files provided.
 
@@ -45,3 +53,29 @@ Encryptor
 ```
 CERT_PATH=./certs/client.pem KEY_PATH=./certs/client-key.pem ROOT_CERT_PATH=./certs/ca.pem BIND_PORT=10000 REMOTE_ADDR_PAIR=localhost:10001 ./main encryptor
 ```
+
+Decryptor
+
+```
+CERT_PATH=./certs/server.pem KEY_PATH=./certs/server-key.pem ROOT_CERT_PATH=./certs/ca.pem BIND_PORT=10001 REMOTE_ADDR_PAIR=localhost:10002 ./main decryptor
+```
+
+# Testing
+
+```
+Client ---> encryptor (port 10000) -> decryptor (port 10001) -> Server (port 10002)
+```
+
+Like this diagram, represent the real-world use case for this program
+
+![Alt text](/screenshot/securedlink.png?raw=true "Successful test")
+
+# Screenshots
+
+This is the picture, testing successful with netcat, representing client and server
+
+![Alt text](/screenshot/success.png?raw=true "Successful test")
+
+When you try to connect directly to the server (decryptor). It is not valid TLS handshake
+
+![Alt text](/screenshot/rejected.png?raw=true "Any non-tls connection will be rejected")

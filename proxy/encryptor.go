@@ -55,7 +55,7 @@ func Encrypt() {
 			// we are doing this so we can print the peer certificates prior to reading / writing to the connection
 			err = conn2.Handshake()
 			if err != nil {
-				log.Fatalf("failed to complete handshake: %s", err)
+				log.Printf("failed to complete handshake: %s\n", err)
 				return
 			}
 

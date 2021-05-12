@@ -1,2 +1,3 @@
 all: 
+	go fmt ./...
 	go build -o main
