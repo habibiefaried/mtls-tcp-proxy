@@ -22,7 +22,7 @@ Generate the CA certificate and private key.
 cfssl gencert -initca ca-csr.json | cfssljson -bare ca
 ```
 
-Generate a server cert using the CSR provided. You can change hostname as you want the client connect to.
+Generate a server cert using the CSR provided. You can change hostname as you want the client connect to (in this case, `localhost`)
 
 ```
 cfssl gencert  \
@@ -80,7 +80,7 @@ Client ---> encryptor (port 10000) -> decryptor (port 10001) -> Server (port 100
 
 Like this diagram, represent the real-world use case for this program
 
-![Alt text](/screenshot/securedlink.png?raw=true "Successful test")
+![Alt text](/screenshot/securedlink.png?raw=true "Secured link")
 
 # Screenshots
 

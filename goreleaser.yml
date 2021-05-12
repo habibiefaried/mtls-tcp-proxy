@@ -1,0 +1,19 @@
+builds:
+  -
+    id: "mtlstcpproxy"
+    flags:
+      - -v
+    ldflags:
+     - -s -w -extldflags '-static'
+    goarch:
+      - amd64
+      - 386
+    goos:
+      - linux
+    env:
+      - CGO_ENABLED=0
+    skip: false
+archives:
+  -
+    format: binary
+    name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"
